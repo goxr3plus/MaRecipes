@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>forkify // Search over 1,000,000 recipes</title>
-</head> 
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header class="header">
-            <img src="img/logo.png" alt="Logo" class="header__logo">
-            <form class="search">
-                <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes...">
-                <button class="btn search__btn">
-                    <svg class="search__icon">
-                        <use href="img/icons.svg#icon-magnifying-glass"></use>
-                    </svg>
-                    <span>Search</span>
-                </button>
-            </form>
-            <div class="likes">
-                <div class="likes__field">
-                    <svg class="likes__icon">
-                        <use href="img/icons.svg#icon-heart"></use>
-                    </svg>
-                </div>
-                <div class="likes__panel">
-                    <ul class="likes__list">
-                        <!--
+      <header class="header">
+        <img src="img/logo.png" alt="Logo" class="header__logo" />
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Search over 1,000,000 recipes..."
+          />
+          <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="img/icons.svg#icon-magnifying-glass"></use>
+            </svg>
+            <span>Search</span>
+          </button>
+        </form>
+        <div class="likes">
+          <div class="likes__field">
+            <svg class="likes__icon">
+              <use href="img/icons.svg#icon-heart"></use>
+            </svg>
+          </div>
+          <div class="likes__panel">
+            <ul class="likes__list">
+              <!--
                         <li>
                             <a class="likes__link" href="#23456">
                                 <figure class="likes__fig">
@@ -45,138 +52,18 @@
                             </a>
                         </li>
                         -->
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-
-        <div class="results">
-            <ul class="results__list">
-                <!--
-                <li>
-                    <a class="results__link results__link--active" href="#23456">
-                        <figure class="results__fig">
-                            <img src="img/test-1.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pasta with Tomato ...</h4>
-                            <p class="results__author">The Pioneer Woman</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#76767">
-                        <figure class="results__fig">
-                            <img src="img/test-2.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pasta Salad with ...</h4>
-                            <p class="results__author">Spicy Perspective</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#85354">
-                        <figure class="results__fig">
-                            <img src="img/test-3.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Homemade Tomato ...</h4>
-                            <p class="results__author">All Recipes</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#43563">
-                        <figure class="results__fig">
-                            <img src="img/test-4.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pasta with Tomato ...</h4>
-                            <p class="results__author">The Pioneer Woman</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#2256665">
-                        <figure class="results__fig">
-                            <img src="img/test-5.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Greek Pasta with ...</h4>
-                            <p class="results__author">Chow</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#7567567">
-                        <figure class="results__fig">
-                            <img src="img/test-9.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Cherry tomato, kale ...</h4>
-                            <p class="results__author">BBC Good Food</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#5676577">
-                        <figure class="results__fig">
-                            <img src="img/test-7.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pasta with Fresh ...</h4>
-                            <p class="results__author">Chow</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#98798">
-                        <figure class="results__fig">
-                            <img src="img/test-8.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Buttery Tomato Pasta ...</h4>
-                            <p class="results__author">Simply Recipes</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="results__link" href="#5464646456">
-                        <figure class="results__fig">
-                            <img src="img/test-10.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pesto Pasta Salad ...</h4>
-                            <p class="results__author">Eats Well With Others</p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a class="results__link" href="#345345435">
-                        <figure class="results__fig">
-                            <img src="img/test-6.jpg" alt="Test">
-                        </figure>
-                        <div class="results__data">
-                            <h4 class="results__name">Pasta with Roasted ...</h4>
-                            <p class="results__author">Two Peas and Their Pod</p>
-                        </div>
-                    </a>
-                </li>
-                -->
             </ul>
+          </div>
+        </div>
+      </header>
 
-            <div class="results__pages">
-                <!--
+      <div class="results">
+        <ul class="results__list">
+         
+        </ul>
+
+        <div class="results__pages">
+          <!--
                 <button class="btn-inline results__btn--prev">
                     <svg class="search__icon">
                         <use href="img/icons.svg#icon-triangle-left"></use>
@@ -190,14 +77,11 @@
                     </svg>
                 </button>
                 -->
-            </div>
         </div>
+      </div>
 
-
-
-        <div class="recipe">
-
-            <!--
+      <div class="recipe">
+        <!--
             <figure class="recipe__fig">
                 <img src="img/test-1.jpg" alt="Tomato" class="recipe__img">
                 <h1 class="recipe__title">
@@ -335,18 +219,13 @@
                 </a>
             </div>
             -->
-        </div>
+      </div>
 
+      <div class="shopping">
+        <h2 class="heading-2">My Shopping List</h2>
 
-
-
-
-        <div class="shopping">
-            <h2 class="heading-2">My Shopping List</h2>
-
-            <ul class="shopping__list">
-
-                <!--
+        <ul class="shopping__list">
+          <!--
                 <li class="shopping__item">
                     <div class="shopping__count">
                         <input type="number" value="500" step="100">
@@ -426,16 +305,15 @@
                     </button>
                 </li>
                 -->
-            </ul>
+        </ul>
 
-            <div class="copyright">
-                &copy; by Jonas Schmedtmann. Powered by
-                <a href="http://food2fork.com" target="_blank" class="link">Food2Fork.com</a>.
-            </div>
-
+        <div class="copyright">
+          &copy; by Jonas Schmedtmann. Powered by
+          <a href="http://food2fork.com" target="_blank" class="link"
+            >Food2Fork.com</a
+          >.
         </div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>

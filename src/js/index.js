@@ -1,4 +1,6 @@
 import Search from "./models/Search";
+import * as searchView from "./views/searchView";
+import { elements } from "./views/base";
 
 /**
  * Global State of the app
@@ -7,13 +9,31 @@ import Search from "./models/Search";
  * - Shopping list object
  * - Liked recipes
  */
-const state = {
+const state = {};
 
-}
+const controlSearch = async () => {
+  //Get query from view
+  const query = searchView.getInput();
 
-const search = new Search("salad");
-// search.getResults().then(data => {
-//   data.forEach(element => {
-//     console.log(`Publisher : ${element.publisher} , Title : ${element.title}`);
-//   });
-// });
+  if (query) {
+    console.log("Entered");
+    //New search object and add to state
+    state.search = new Search(query);
+
+    //Prepare UI for results
+    searchView.clearInput();
+    searchView.clearResults();
+
+    //Search for Recipes
+    await state.search.getResults();
+
+    //Render results on UI
+    searchView.renderResults(state.search.results);
+  }
+  console.log(query);
+};
+
+elements.searchForm.addEventListener("submit", e => {
+  e.preventDefault();
+  controlSearch();
+});

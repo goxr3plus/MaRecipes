@@ -10,7 +10,7 @@ class Search {
     return axios
       .get(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`)
       .then(res => {
-        return res.data.recipes;
+        this.results = res.data.recipes;
       })
       .catch(err => {
         alert(`Some kind of error happened :'( \n ${err}`);
