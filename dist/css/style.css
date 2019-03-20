@@ -147,7 +147,7 @@ body {
     width: 5.5rem;
     fill: #F59A83;
     transform-origin: 44% 50%;
-    animation: rotate 1.5s infinite linear; }
+    animation: rotate 0.5s infinite linear; }
 
 @keyframes rotate {
   0% {
