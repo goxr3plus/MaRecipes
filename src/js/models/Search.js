@@ -1,20 +1,37 @@
 import axios from "axios";
+import { apiKeys, proxy } from "../config";
 
 class Search {
   constructor(query) {
     this.query = query;
   }
 
-  async getResults() {
-    const key = `d9a51595a52bdef87baae0b18c22e2ac`;
-    return axios
-      .get(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`)
-      .then(res => {
-        this.results = res.data.recipes;
-      })
-      .catch(err => {
-        alert(`Some kind of error happened :'( \n ${err}`);
-      });
+  async getResults(counter = 0) {
+    try {
+      let working = false;
+
+      //Loop until a working API KEY
+      while (!working) {
+        const key = apiKeys[counter];
+        const result = await axios.get(
+          `${proxy}/api/search?key=${key}&q=${this.query}`
+        );
+
+        this.results = result.data.recipes;
+        this.error = result.data.error;
+
+        //Check if working
+        working = this.error === undefined;
+        let text = !working ? "not working!" : "works like charm!!";
+        console.log(`API KEY : [${key}] ${text} `);
+
+        //Stop on maximum array elements
+        if (apiKeys[counter + 1] !== undefined) counter++;
+        else break;
+      }
+    } catch (e) {
+      alert(`Error : ${e}`);
+    }
   }
 }
 
