@@ -23,7 +23,7 @@ class Search {
         //Check if working
         working = this.error === undefined;
         let text = !working ? "not working!" : "works like charm!!";
-        console.log(`API KEY : [${key}] ${text} `);
+        //console.log(`API KEY : [${key}] ${text} `);
 
         //Stop on maximum array elements
         if (apiKeys[counter + 1] !== undefined) counter++;

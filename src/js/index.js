@@ -62,15 +62,28 @@ elements.resultsPages.addEventListener("click", e => {
 /**
  * RECIPE CONTROLLER
  */
-// const recipe = new Recipe(46956);
-// recipe.getRecipe().then(resolve=>{
-//   console.log(recipe)
-// })
+const controlRecipe = async () => {
+  const id = window.location.hash.replace("#", "");
 
-const controlRecipe = () => {
-  const id = window.location.hash;
+  if (id) {
+    //Create new recipe object
+    state.recipe = new Recipe(id);
 
-  console.log(window);
-}
+    //Get recipe data
+    await state.recipe.getRecipe();
 
-window.addEventListener("hashchange",controlRecipe)
+    //Check for error
+    if (state.recipe.error) {
+      clearLoader();
+      alert(state.recipe.error);
+      return;
+    }
+
+    //Render Recipe
+    console.log(state.recipe);
+  }
+};
+
+["hashchange", "load"].forEach(event =>
+  window.addEventListener(event, controlRecipe)
+);
