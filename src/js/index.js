@@ -2,6 +2,7 @@ import Search from "./models/Search";
 import * as searchView from "./views/searchView";
 import { elements, renderLoader, clearLoader } from "./views/base";
 import Recipe from "./models/Recipe";
+import * as recipeView from "./views/recipeView";
 
 /**
  * Global State of the app
@@ -49,7 +50,6 @@ elements.searchForm.addEventListener("submit", e => {
   controlSearch();
 });
 
-
 elements.resultsPages.addEventListener("click", e => {
   const button = e.target.closest(".btn-inline");
   if (button) {
@@ -68,11 +68,11 @@ const controlRecipe = async () => {
   if (id) {
     //Create new recipe object
     state.recipe = new Recipe(id);
-  
 
     //Get recipe data
+    recipeView.clearResults();
+    renderLoader(elements.recipe);
     await state.recipe.getRecipe();
-    console.log(state.recipe.ingredients)
     state.recipe.parseIngredients();
 
     //Check for error
@@ -83,10 +83,13 @@ const controlRecipe = async () => {
     }
 
     //Render Recipe
+    clearLoader();
+    recipeView.renderRecipe(state.recipe)
     console.log(state.recipe.ingredients);
   }
 };
 
-["hashchange", "load"].forEach(event =>
+//"load"
+["hashchange"].forEach(event =>
   window.addEventListener(event, controlRecipe)
 );

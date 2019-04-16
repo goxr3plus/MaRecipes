@@ -33,7 +33,7 @@ class Recipe {
                     this.calculateTime();
                     this.calcServings();
                 }
-                //console.log(`API KEY : [${key}] ${text} `);
+                console.log(`API KEY : [${key}] ${text} `);
 
                 //Stop on maximum array elements
                 if (apiKeys[counter + 1] !== undefined) counter++;
@@ -54,7 +54,7 @@ class Recipe {
 
     calcServings() {
         this.servings = 4;
-    }
+    }   
 
     parseIngredients(){
       const unitsLong = ["tablespoons","tablespoon","ounces","ounce","teaspoons","teaspoon","cups","pounds"];
