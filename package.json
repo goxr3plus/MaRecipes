@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "global": "^4.3.2",
     "jquery": "^3.5.0",
     "live-server": "^1.2.1"
